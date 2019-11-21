@@ -1,15 +1,16 @@
-package com.sapient.movie.booking.model;
+package com.sapient.KafkaFirst.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
-
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
-public class Movie {
+@Document
+public class Movie  {
+    @Id
     private long movieId;
     private String name;
     private String genre;

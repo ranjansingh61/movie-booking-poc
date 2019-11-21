@@ -1,17 +1,24 @@
 package com.sapient.movie.booking.service;
 
-import com.sapient.movie.booking.model.Movie;
-import com.sapient.movie.booking.model.Theater;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import com.sapient.KafkaFirst.model.Movie;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
 
 @Service
 public class KafkaService {
-    public Movie getBookedMovie() {
-// get data from kafka system
-        Theater theater = new Theater(21234,"PVR","Banglore");
-        Movie movie = new Movie(1234,"Bala","Comedy",new Date(),"2 hr 30 min","trailer",theater);
-        return movie;
+    @Autowired
+    private BookingService bookingService;
+
+    @Autowired
+    private MongoService mongoService;
+
+    @KafkaListener(topics = "kafkaDemoTopic", groupId = "group_id")
+    public void consume(Movie movie) {
+        mongoService.save(movie);
     }
 }

@@ -1,6 +1,6 @@
 package com.sapient.movie.booking.controller;
 
-import com.sapient.movie.booking.model.Movie;
+import com.sapient.KafkaFirst.model.Movie;
 import com.sapient.movie.booking.model.MovieDetails;
 import com.sapient.movie.booking.model.Seat;
 import com.sapient.movie.booking.service.BookingService;
@@ -26,7 +26,7 @@ public class BookingController {
 
     @GetMapping("/bookedMovie")
     public MovieDetails getBookedMovie() {
-        Movie movie = kafkaService.getBookedMovie();
+        Movie movie = bookingService.getBookedMovie();
         List<Seat> assignedSeats = prepareData();//seatSelectionService.assignSeatsToUser();
         int totalPrice = seatSelectionService.computePriceForAssignedSeat(assignedSeats);
         MovieDetails movieDetails = bookingService.transformMovieDetailsData(movie, assignedSeats, totalPrice);
