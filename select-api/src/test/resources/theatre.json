@@ -1,0 +1,8 @@
+
+{
+"theaterId": 201,
+"name": "PVR",
+"address": "Banglore East",
+"showIds": [1,2,3,4],
+"movieId": 101
+}

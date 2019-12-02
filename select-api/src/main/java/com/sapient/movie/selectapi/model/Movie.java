@@ -1,4 +1,4 @@
-package com.sapient.KafkaFirst.model;
+package com.sapient.movie.selectapi.model;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,14 +11,14 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @Document
-public class Movie  {
+public class Movie {
     @Id
-    private long movieId;
+    private int movieId;
     private String name;
     private String genre;
-    private Date date;
     private String duration;
     private String trailer;
-    private Theater theater;
-    private List<Seat> seats;
+    private Date releaseDate;
+    private List<Integer> theatreIds;
+
 }

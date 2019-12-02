@@ -1,0 +1,9 @@
+{
+  "movieId": 101,
+  "name": "HouseFull",
+  "genre": "Comedy",
+  "duration": "2 hr 30 min",
+  "trailer": "trailer",
+  "releaseDate": null,
+  "theatreIds": [201, 202, 203]
+}

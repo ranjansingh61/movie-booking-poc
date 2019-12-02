@@ -17,7 +17,6 @@ public class MovieDetails {
     @Id
     private String movieDetailsId;
     private Movie movie;
-    private List<Seat> seat;
     private int totalBill;
     private Status status;
     private String paymentRef;

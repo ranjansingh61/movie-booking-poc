@@ -1,4 +1,4 @@
-package com.sapient.movie.booking.model;
+package com.sapient.movie.seatSelection.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
